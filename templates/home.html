@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+  <title>{% block title %} Axon {% endblock %}</title>
+</head>
+<body>
+  {% block content %}
+
+  <div class="container">
+    <div class="trainer-container">
+      <h1 class="axon-header">Axon Trainer</h1>
+      <div class="trainer-profile">
+        <img src="../static/assets/trainer-modified.png" alt="image of trainer Jane" class="trainer-img">
+        <div class="trainer-name">Jane Doe <br />
+          <a href="/" class="ig-link">
+            <i class="fa-brands fa-instagram">
+              <small class="ig-link"> jdfitness</small>
+            </i> 
+          </a> 
+        </div>
+      </div>
+        <img src="../static/assets/logo-nasm.png" alt="nasm-logo" class="nasm-logo"> 
+        <span class="trainer-text">
+          Certified Personal Trainer
+        </span>
+      <div>
+        <img src="../static/assets/cpr.png" alt="cpr-logo" class="cpr-logo"> CPR/AED CERTIFIED
+      </div>
+      <div>
+        
+      </div>
+      <blockquote class="trainer-quote">
+        "Living a high performance lifestyle, 
+        <br />while guiding others to do the same."
+      </blockquote>
+
+      <footer>
+        <small class="copyright">© 2022 by Axon. All rights reserved.</small> 
+      </footer>
+    </div>
+
+    <div class="client-container">
+      <h1 class="client-header">Clients<button class="client add-client-btn"><i class="fa-regular fa-square-plus"></i> add</button></h1>
+      <div class="client-list-container">
+        <ul class="client-list">
+          {% for client in clients %}
+          <a href="client/{{ client.id }}" class="client-tab-link">
+            <li class="client client-tab">
+            {{ client.full_name}}
+            <img src="{{ client.image }}" alt="client-profile-pic" class="client-img"> 
+            </li>
+          </a>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="modal-form">
+        <form class="form-input">
+          <h3>New Client</h3>
+          <div class="firstname-input">
+            <label for="first-name">First Name</label>
+            <input type="text" name="firstname" id="first-name">
+          </div>
+          <div class="lastname-input">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="lastname" id="last-name">
+          </div>
+          <button class="btn-cancel">
+            <i class="fa-regular fa-rectangle-xmark"></i> Cancel
+          </button>
+          <button class="btn-save" formaction="/" formmethod="POST">
+            <i class="fa-regular fa-square-check"></i> Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="upcoming-sessions">
+      <h1 class="upcoming-header">Upcoming Sessions</h1>
+      <div class="calendar">
+        <h3 class="coming-soon">Calendar coming soon...</h3>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/static/loadExercises.js"></script>
+  <script src="/static/addClientForm.js"></script>
+  <script src="/static/generateWorkoutForm.js"></script>
+  <script src="/static/addWorkoutForm.js"></script>
+</body>
+</html>

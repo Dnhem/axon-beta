@@ -1,0 +1,373 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: .8em;
+  background-color: rgba(52, 22, 80, .7);
+  color: #1a0322;
+}
+
+/* Layout */
+
+.container {
+  display: grid;
+  grid-template-columns: 25% 45% 25%;
+}
+
+.trainer-container,
+.client-profile-section {
+  background-color: rgba(13, 242, 43, 0.5);
+  min-height: 100vh;
+  text-align: center;
+  padding: 1em;
+  position: relative;
+}
+
+.axon-header {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.client-header {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.trainer-name {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-bottom: 2em;
+}
+
+.fa-instagram {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.ig-link {
+  font-size: .6rem;
+  letter-spacing: .1rem;
+}
+
+.ig-link:link {
+  text-decoration: none;
+}
+
+.ig-link:visited {
+  color: #1a0322;
+}
+
+.ig-link:hover,
+.ig-link:focus {
+  color: #fff;
+}
+
+.trainer-img {
+  width: 250px;
+}
+
+.nasm-logo {
+  width: 80px;
+}
+
+.trainer-text {
+  display: inline-block;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+.cpr-logo {
+  width: 60px;
+  opacity: 0.8;
+}
+
+.trainer-quote {
+  font-size: 1em;
+  font-style: italic;
+  margin-top: 2em;
+  color: purple;
+}
+
+.copyright {
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: 1em;
+  color: rgba(23, 20, 20, 0.9);
+}
+
+.home-link {
+  font-size: 1.2em;
+  text-decoration-line: none;
+  color: rgba(23, 20, 20, 0.9);
+}
+
+.home-link:hover {
+  color: #fff;
+}
+
+/* Client section */
+.client-container {
+  margin-left: 3em;
+}
+
+.client-header {
+  margin-top: .5em;
+}
+
+.add-client-btn,
+.add-workout-btn {
+  background-color: rgba(13, 242, 43, 0.5);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: .2em .5em;
+  border-radius: .5em;
+  border: none;
+  margin-left: 3em;
+  height: 2em;
+}
+
+.client:hover,
+.client-tab:hover {
+  cursor: pointer;
+  filter: brightness(150%);
+}
+
+.client-name {
+  font-size: 2.5em;
+}
+
+.fa-square-plus {
+  font-size: 1.5em;
+}
+
+.client-list,
+.workout-tabs {
+  list-style-type: none;
+  margin-top: 4em;
+}
+
+.client-list-container {
+  margin-left: -3.5em;
+  margin-top: -3em;
+}
+
+.client-tab {
+  background-color: rgba(13, 242, 43, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 1em;
+  padding: 1.2em;
+  padding-right: 6em;
+  border-radius: 1em;
+  min-width: 8em;
+  max-width: 8em;
+  position: relative;
+}
+
+.client-tab-link {
+  text-decoration-line: none;
+  color: #1a0322;
+  display: inline-block;
+}
+
+.client-img {
+  right: 1em;
+  margin-left: 3em;
+  width: 50px;
+  position: absolute;
+  transform: translateY(-30%);
+}
+
+.client-profile-img {
+  width: 200px;
+}
+
+/* Upcoming Section */
+.upcoming-header,
+.client-metrics-header {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.review-workout-header {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Coming soon */
+.calendar,
+.client-metrics-section {
+  height: 80%;
+  width: 300px;
+  margin-left: 3%;
+  background-color: rgba(13, 242, 43, 0.5);
+  border-radius: 15px;
+  padding: 1em;
+}
+
+.coming-soon {
+  text-align: center;
+}
+/******** Modal form ********/
+.modal-form {
+  background-color: rgba(224, 215, 215, .95);
+  color: #1a0322;
+  min-width: 300px;
+  height: 50%;
+  position: absolute;
+  top: 10%;
+  visibility: hidden;
+  padding: .7em;
+  border-radius: 1em;
+}
+
+.visible {
+  visibility: visible;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.firstname-input {
+  margin-bottom: 1em;
+}
+
+.btn-cancel {
+  padding: .2em .5em;
+  background-color: rgba(255, 0, 0, 0.4);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1.3em;
+  left: 1.3em;
+}
+
+.btn-cancel:hover {
+  filter: brightness(80%);
+}
+
+.btn-save:hover {
+  filter: brightness(80%);
+}
+
+.btn-save {
+  padding: .2em .5em;
+  background-color: rgba(13, 242, 43, 0.4);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1.3em;
+  right: 1.3em;
+}
+
+/* Client Page Design */
+.client-page-container {
+  position: relative;
+}
+
+.client-profile-section {
+  padding: 1em;
+}
+
+.client-workout-header {
+  margin-left: 3.5em;
+}
+
+.client-workout-records {
+  margin-left: .5em;
+}
+
+.client-workout-tabs {
+  margin-top: -3em;
+}
+
+.workout-form {
+  background-color: rgba(224, 215, 215, .95);
+  border-radius: 1em;
+  max-width: 100%;
+  min-width: 60em;
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  padding: .7em;
+  top: 5%;
+  left: 30%;
+}
+
+.acute-variables {
+  width: 3em;
+}
+
+.review-workout {
+  position: relative;
+}
+
+.btn-close-workout-form {
+  padding: .2em .5em;
+  background-color: rgba(255, 0, 0, 0.4);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.show-form {
+  visibility: visible;
+  animation: fadein .8s;
+}
+
+.add-workout-btn:hover {
+  cursor: pointer;
+}
+
+.program-design {
+  flex-basis: 50%;
+}
+
+.review-workout {
+  flex-basis: 50%;
+}
+
+#date-picker {
+  width: 15em;
+  height: 3em;
+  background: linear-gradient(
+    45deg,
+    rgba(13, 242, 43, 0.6),
+    rgba(13, 242, 43, 0.2)
+  );
+  border: 0;
+  border-radius: 1em;
+  outline: none;
+  font-size: 1.2em;
+  padding: 0 .5em;
+  text-transform: uppercase;
+}
