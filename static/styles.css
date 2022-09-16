@@ -119,8 +119,8 @@ body {
   margin-top: .5em;
 }
 
-.add-client-btn,
-.add-workout-btn {
+#add-client-btn,
+#add-workout-btn {
   background-color: rgba(13, 242, 43, 0.5);
   color: #1a0322;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -344,7 +344,7 @@ body {
   animation: fadein .8s;
 }
 
-.add-workout-btn:hover {
+#add-workout-btn:hover {
   cursor: pointer;
 }
 

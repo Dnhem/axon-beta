@@ -1,4 +1,4 @@
-{% extends 'home.html' %}
+{% extends 'layout.html' %}
 
 {% block title %}{{ client.full_name }}{% endblock %}
 
@@ -13,7 +13,7 @@
     </div>
     <div class="client-workout-records">
       <div class="client-workout-header">
-        <h1 class="client-header">Workouts<button class="add-workout-btn"><i class="fa-regular fa-square-plus"></i> add</button></h1>
+        <h1 class="client-header">Workouts<button id="add-workout-btn"><i class="fa-regular fa-square-plus"></i> add</button></h1>
       </div>
       <div class="client-workout-tabs">
         <ul class="workout-tabs">
@@ -62,7 +62,7 @@
           <input type="text" name="lower-leg-duration" id="lower-leg-duration" maxlength="4" placeholder="min : sec">
         </div>
         <div>
-          <button class="lower-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          <button id="lower-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
         </div>
         <div class="error-messages"></div>
       </div>
@@ -218,4 +218,10 @@
         </div>
     </div>
   </div>
+<script src="/static/generateWorkoutForm.js" defer></script>
+<script src="/static/addWorkoutForm.js" defer></script>
+<script src="/static/loadExercises.js" defer></script>
 {% endblock %}
+
+
+

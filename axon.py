@@ -48,7 +48,6 @@ def show_client_page(client_id):
      Design workout template"""
   client = Client.query.get(client_id)
   exercises = client.organize_exercise_dates(client.exercises)
-  print(exercises)
   return render_template('client-page.html', client=client, exercises=exercises)
 
 @app.route('/client/<int:client_id>', methods=["POST"])

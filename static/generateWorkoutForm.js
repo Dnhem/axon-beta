@@ -2,7 +2,7 @@ const exercisesList = document.querySelector(".exercises-list");
 const errorMsg = document.querySelector(".error-messages");
 
 // Lower leg input section
-const btnLowerLegExercise = document.querySelector(".lower-leg-exercise");
+const btnLowerLegExercise = document.querySelector("#lower-leg-exercise");
 const lowerLegExercise = document.querySelector("#lower-leg-select");
 const lowerLegSets = document.querySelector("#lower-leg-sets");
 const lowerLegReps = document.querySelector("#lower-leg-reps");

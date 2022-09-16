@@ -23,6 +23,8 @@ class Client(db.Model):
   exercises = db.relationship('Exercise')
 
   def organize_exercise_dates(self, exercises):
+    # Generate organized list of lists by dates
+    # Template list displaying dated records ("date blocks") of exercises
     unique_dates = set()
     organize_dates = []
     for e in exercises:
