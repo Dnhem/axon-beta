@@ -8,7 +8,17 @@
       <img src="{{ client.image }}" alt="client-profile-pic" class="client-profile-img"> 
       <div class="client-name">{{ client.full_name }}</div>
       <div>
-        <a href="/" class="home-link">Home 🏠</a>
+        <a href="/" class="home-link"><span class="back-home">Back to trainer page </span></a>
+      </div>
+      <ul class="client-details">
+        <li>Start Date: {{ client.start_date }}</li>
+        <li>Goals: {{ client.goals }}</li>
+        <li>Email: {{ client.email }}</li>
+        <li>Phone: {{ client.phone }}</li>
+      </ul>
+      <div class="client-details-btn-container">
+        <button class="btn-edit-client"><i class="fa-regular fa-square-check"></i> Edit</button>
+        <button class="btn-remove-client"><i class="fa-regular fa-rectangle-xmark"></i> Remove</button>
       </div>
     </div>
     <div class="client-workout-records">
@@ -218,9 +228,9 @@
         </div>
     </div>
   </div>
-<script src="/static/generateWorkoutForm.js" defer></script>
-<script src="/static/addWorkoutForm.js" defer></script>
-<script src="/static/loadExercises.js" defer></script>
+<script src="/static/generateWorkoutForm.js"></script>
+<script src="/static/addWorkoutForm.js"></script>
+<script src="/static/loadExercises.js"></script>
 {% endblock %}
 
 

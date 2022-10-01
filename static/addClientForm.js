@@ -3,7 +3,7 @@ const addClient = document.querySelector("#add-client-btn");
 const modalForm = document.querySelector(".modal-form");
 const btnCancel = document.querySelector(".btn-cancel");
 const btnSave = document.querySelector(".btn-save");
-const formInput = document.querySelector(".form-input");
+const formInput = document.querySelector(".add-client-form");
 
 addClient.addEventListener("click", () => {
   modalForm.classList.add("visible");

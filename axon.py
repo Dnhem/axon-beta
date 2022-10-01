@@ -25,11 +25,12 @@ def display_home():
 
 @app.route('/exercises/bodyPart/<bodypart>')
 def list_exercise(bodypart):
-    data = requests.get(f"https://exercisedb.p.rapidapi.com/exercises/bodyPart/{bodypart}",  headers = {
+    response = requests.get(f"https://exercisedb.p.rapidapi.com/exercises/bodyPart/{bodypart}",  headers = {
         "X-RapidAPI-Key": API_SECRET_KEY,
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
       })
-    return data.json()
+    print('*************', response.json())
+    return response.json()
 
 @app.route('/', methods=["POST"])
 def add_client():

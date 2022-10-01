@@ -10,11 +10,11 @@ Client.query.delete()
 Exercise.query.delete()
 
 # Add example clients
-john = Client(first_name = "John", last_name = "Smith", phone="415-999-9999", email="johnsmith@pretendmail.com", image="../static/assets/john-modified.png")
+john = Client(first_name = "John", last_name = "Smith", phone="415-999-9999", email="johnsmith@pretendmail.com", image="../static/assets/john-modified.png", start_date="2020-08-15", goals="Muscle gain")
 
-ada = Client(first_name = "Ada", last_name = "Lovelace", phone="415-777-7777", email="adalovelace@pretendmail.com", image="../static/assets/ada-modified.png")
+ada = Client(first_name = "Ada", last_name = "Lovelace", phone="415-777-7777", email="adalovelace@pretendmail.com", image="../static/assets/ada-modified.png", start_date="2018-12-08", goals="Muscle tone")
 
-marco = Client(first_name = "Marco", last_name = "Polo", phone="650-555-5555", email="marcopolo@pretendmail.com", image="../static/assets/marco-modified.png")
+marco = Client(first_name = "Marco", last_name = "Polo", phone="650-555-5555", email="marcopolo@pretendmail.com", image="../static/assets/marco-modified.png", start_date="2022-09-2", goals="Weight loss")
 
 # Add example exercises
 jumping_jacks = Exercise(name="jumping jacks", sets="3", rest="1:00", duration="3:00", client_id=1, date="2022-09-10")

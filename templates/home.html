@@ -51,22 +51,40 @@
         </ul>
       </div>
       <div class="modal-form">
-        <form class="form-input">
+        <form class="add-client-form">
           <h3>New Client</h3>
-          <div class="firstname-input">
-            <label for="first-name">First Name</label>
-            <input type="text" name="firstname" id="first-name">
+          <div class="add-client-form-container">
+            <div class="firstname-input">
+              <label for="first-name">First Name</label>
+              <input required type="text" name="firstname">
+            </div>
+            <div class="lastname-input">
+              <label for="last-name">Last Name</label>
+              <input required type="text" name="lastname">
+            </div>
+            <div class="phone-input">
+              <label for="phone">Phone</label>
+              <input required type="text" name="phone">
+            </div>
+            <div class="email-input">
+              <label for="email">Email</label>
+              <input required type="email" name="email">
+            </div>
+            <div class="goals-input">
+              <label for="goals">Goals</label>
+              <input required type="text" name="goals">
+            </div>
+            <div class="start-input">
+              <label for="start">Start date</label>
+              <input required type="date" name="date">
+            </div>
           </div>
-          <div class="lastname-input">
-            <label for="last-name">Last Name</label>
-            <input type="text" name="lastname" id="last-name">
-          </div>
-          <button class="btn-cancel">
-            <i class="fa-regular fa-rectangle-xmark"></i> Cancel
-          </button>
-          <button class="btn-save" formaction="/" formmethod="POST">
-            <i class="fa-regular fa-square-check"></i> Save
-          </button>
+            <button class="btn-cancel">
+              <i class="fa-regular fa-rectangle-xmark"></i> Cancel
+            </button>
+            <button class="btn-save" formaction="/" formmethod="POST">
+              <i class="fa-regular fa-square-check"></i> Save
+            </button>
         </form>
       </div>
     </div>
