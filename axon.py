@@ -37,7 +37,11 @@ def add_client():
   """Add new client to database"""
   first_name = request.form["firstname"]
   last_name = request.form["lastname"] 
-  new_client = Client(first_name=first_name, last_name=last_name)
+  start_date = request.form["date"]
+  goals = request.form["goals"]
+  phone = request.form["phone"]
+  email = request.form["email"]
+  new_client = Client(first_name=first_name, last_name=last_name, start_date=start_date, goals=goals, phone=phone, email=email)
   db.session.add(new_client)
   db.session.commit()
   return redirect('/')

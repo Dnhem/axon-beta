@@ -1,5 +1,6 @@
 // Helper function to populate a dropdown item for each exercise
 function populateDropDown(bodyPart, dropDown) {
+  console.log(bodyPart);
   let dropDownList = document.querySelector(`#${dropDown}`);
   let defaultOption = document.createElement("option");
   defaultOption.text = "Select Exercise";
@@ -25,7 +26,18 @@ async function getExercises(bodyPart, dropDown) {
   await axios
     .request(options)
     .then(function(exercises) {
-      populateDropDown(exercises.data, dropDown);
+      // Mock data, API monthly quota exceeded
+      let results = {
+        "lower legs": [ { name: "calf raises" }, { name: "peroneal stretch" } ],
+        "upper legs": [ { name: "squats" }, { name: "lunge" } ],
+        back: [ { name: "lat pull-down" }, { name: "dumbbell row" } ],
+        chest: [ { name: "bench press" }, { name: "dumbbell flies" } ],
+      };
+      console.log(results);
+      console.log(bodyPart);
+      // TODO: Uncomment line 39 and comment line 40 to make remote api call
+      // populateDropDown(exercises.data, dropDown);
+      populateDropDown(results[bodyPart], dropDown);
     })
     .catch(function(error) {
       console.error(error);
@@ -33,7 +45,7 @@ async function getExercises(bodyPart, dropDown) {
 }
 
 // Generate dropdown menu for each body part on page load
-getExercises("lower%20legs", "lower-leg-select");
-getExercises("upper%20legs", "upper-leg-select");
+getExercises("lower legs", "lower-leg-select");
+getExercises("upper legs", "upper-leg-select");
 getExercises("back", "back-select");
 getExercises("chest", "chest-select");

@@ -191,8 +191,8 @@ body {
 }
 
 .client-details li {
-  border-left: 2px solid rgba(52, 22, 80, .7);
-  border-left-width: 7px;
+  border-left: 1px solid rgba(52, 22, 80, .5);
+  border-left-width: 5px;
   margin-bottom: 1.2em;
   padding: 1em;
 }
@@ -204,7 +204,19 @@ body {
 }
 
 .back-home {
+  display: inline-block;
   font-size: 12px;
+  border: 1px solid white;
+  border-radius: .5em;
+  padding: 5px 10px;
+  margin-top: 12px;
+  background-color: rgb(54, 130, 64);
+  color: white;
+}
+
+.back-home:hover {
+  color: rgb(54, 130, 64);
+  background-color: white;
 }
 
 .client-profile-img {
@@ -382,8 +394,7 @@ body {
   border-radius: 1em;
   max-width: 100%;
   min-width: 60em;
-  display: flex;
-  visibility: hidden;
+  display: none;
   position: absolute;
   padding: .7em;
   top: 5%;
@@ -413,7 +424,7 @@ body {
 }
 
 .show-form {
-  visibility: visible;
+  display: flex;
   animation: fadein .8s;
 }
 
