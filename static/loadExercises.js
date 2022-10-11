@@ -1,6 +1,5 @@
 // Helper function to populate a dropdown item for each exercise
 function populateDropDown(bodyPart, dropDown) {
-  console.log(bodyPart);
   let dropDownList = document.querySelector(`#${dropDown}`);
   let defaultOption = document.createElement("option");
   defaultOption.text = "Select Exercise";
@@ -19,29 +18,25 @@ function populateDropDown(bodyPart, dropDown) {
 // 1) API Call to retrieve all exercises for each individual body part
 // 2) calls populateDropDown function
 async function getExercises(bodyPart, dropDown) {
-  const options = {
-    method: "GET",
-    url: `http://localhost:5000/exercises/bodyPart/${bodyPart}`,
+  // TODO: Uncomment to make remote API call
+  // try {
+  //   const exercises = await axios({
+  //     url: `http://localhost:5000/exercises/bodyPart/${bodyPart}`,
+  //     method: "GET",
+  //   });
+  //   populateDropDown(exercises.data, dropDown);
+  // } catch (err) {
+  //   console.log(err);
+  // }
+
+  // Mock data, API monthly quota exceeded
+  let results = {
+    "lower legs": [ { name: "calf raises" }, { name: "peroneal stretch" } ],
+    "upper legs": [ { name: "squats" }, { name: "lunge" } ],
+    back: [ { name: "lat pull-down" }, { name: "dumbbell row" } ],
+    chest: [ { name: "bench press" }, { name: "dumbbell flies" } ],
   };
-  await axios
-    .request(options)
-    .then(function(exercises) {
-      // Mock data, API monthly quota exceeded
-      let results = {
-        "lower legs": [ { name: "calf raises" }, { name: "peroneal stretch" } ],
-        "upper legs": [ { name: "squats" }, { name: "lunge" } ],
-        back: [ { name: "lat pull-down" }, { name: "dumbbell row" } ],
-        chest: [ { name: "bench press" }, { name: "dumbbell flies" } ],
-      };
-      console.log(results);
-      console.log(bodyPart);
-      // TODO: Uncomment line 39 and comment line 40 to make remote api call
-      // populateDropDown(exercises.data, dropDown);
-      populateDropDown(results[bodyPart], dropDown);
-    })
-    .catch(function(error) {
-      console.error(error);
-    });
+  populateDropDown(results[bodyPart], dropDown);
 }
 
 // Generate dropdown menu for each body part on page load

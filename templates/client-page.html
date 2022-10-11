@@ -8,7 +8,7 @@
       <img src="{{ client.image }}" alt="client-profile-pic" class="client-profile-img"> 
       <div class="client-name">{{ client.full_name }}</div>
       <div>
-        <a href="/" class="home-link"><span class="back-home">&#8592 Back to trainer</span></a>
+        <a href="/"><span class="back-home">&#8592 Back to trainer</span></a>
       </div>
       <ul class="client-details">
         <li>Start Date: {{ client.start_date }}</li>
@@ -17,8 +17,14 @@
         <li>Phone: {{ client.phone }}</li>
       </ul>
       <div class="client-details-btn-container">
-        <button class="btn-edit-client"><i class="fa-regular fa-square-check"></i> Edit</button>
-        <button class="btn-remove-client"><i class="fa-regular fa-rectangle-xmark"></i> Remove</button>
+          <a href="/client/{{client.id}}/edit" data-id="{{ client.id }}" class="btn-edit btn-edit-client">
+            <i class="fa-regular fa-square-check"></i> 
+            <span>Edit</span>
+          </a>
+          <a href="/client/{{client.id}}/delete" data-id="{{ client.id }}" class="btn-edit btn-remove-client">
+            <i class="fa-regular fa-rectangle-xmark"></i> 
+            <span>Remove</span> 
+          </a>
       </div>
     </div>
     <div class="client-workout-records">
@@ -46,166 +52,166 @@
   </div>
   <div class="workout-form">
     <div class="program-design">
-      <div class="lower-legs">
-        <h3>Lower Legs</h3>
-        <div>
-          <select name="lower-leg-select" id="lower-leg-select"></select>
+      <div class="program-design-col-1">
+        <div class="lower-legs">
+          <h3>Lower Legs</h3>
+          <div>
+            <select name="lower-leg-select" id="lower-leg-select"></select>
+          </div>
+          <div>
+            <label for="lower-leg-sets">Sets</label>
+            <input type="number" name="lower-leg-sets" id="lower-leg-sets" min="1" max="20">
+          </div>
+          <div>
+            <label for="lower-leg-sets">Reps</label>
+            <input type="number" name="lower-leg-reps" id="lower-leg-reps" min="1" max="100">
+          </div>
+          <div>
+            <label for="lower-leg-weight">Weight(lbs)</label>
+            <input type="number" name="lower-leg-weight" id="lower-leg-weight" min="1" max="500">
+          </div>
+          <div>
+            <label for="lower-leg-rest">Rest</label>
+            <input type="text" name="lower-leg-rest" id="lower-leg-rest" min="1" max="10" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <label for="lower-leg-duration">Duration</label>
+            <input type="text" name="lower-leg-duration" id="lower-leg-duration" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <button class="btn-add-exercise" id="lower-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          </div>
         </div>
-        <div>
-          <label for="lower-leg-sets">Sets</label>
-          <input type="number" name="lower-leg-sets" id="lower-leg-sets" min="1" max="20">
-        </div>
-        <div>
-          <label for="lower-leg-sets">Reps</label>
-          <input type="number" name="lower-leg-reps" id="lower-leg-reps" min="1" max="100">
-        </div>
-        <div>
-          <label for="lower-leg-weight">Weight(lbs)</label>
-          <input type="number" name="lower-leg-weight" id="lower-leg-weight" min="1" max="500">
-        </div>
-        <div>
-          <label for="lower-leg-rest">Rest</label>
-          <input type="text" name="lower-leg-rest" id="lower-leg-rest" min="1" max="10" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <label for="lower-leg-duration">Duration</label>
-          <input type="text" name="lower-leg-duration" id="lower-leg-duration" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <button id="lower-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
-        </div>
-        <div class="error-messages"></div>
-      </div>
 
-      <div class="upper-legs">
-        <h3>Quadriceps/Hamstrings/Glutes</h3>
-        <div>
-          <select name="upper-leg-select" id="upper-leg-select"></select>
+        <div class="upper-legs">
+          <h3>Quadriceps/Hamstrings/Glutes</h3>
+          <div>
+            <select name="upper-leg-select" id="upper-leg-select"></select>
+          </div>
+          <div>
+            <label for="upper-leg-sets">Sets</label>
+            <input type="number" name="upper-leg-sets" id="upper-leg-sets" min="1" max="20">
+          </div>
+          <div>
+            <label for="upper-leg-sets">Reps</label>
+            <input type="number" name="upper-leg-reps" id="upper-leg-reps" min="1" max="100">
+          </div>
+          <div>
+            <label for="upper-leg-weight">Weight(lbs)</label>
+            <input type="number" name="upper-leg-weight" id="upper-leg-weight" min="1" max="500">
+          </div>
+          <div>
+            <label for="upper-leg-rest">Rest</label>
+            <input type="text" name="upper-leg-rest" id="upper-leg-rest"  maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <label for="upper-leg-duration">Duration</label>
+            <input type="text" name="upper-leg-duration" id="upper-leg-duration" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <button class="btn-add-exercise" id="upper-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          </div>
         </div>
-        <div>
-          <label for="upper-leg-sets">Sets</label>
-          <input type="number" name="upper-leg-sets" id="upper-leg-sets" min="1" max="20">
-        </div>
-        <div>
-          <label for="upper-leg-sets">Reps</label>
-          <input type="number" name="upper-leg-reps" id="upper-leg-reps" min="1" max="100">
-        </div>
-        <div>
-          <label for="upper-leg-weight">Weight(lbs)</label>
-          <input type="number" name="upper-leg-weight" id="upper-leg-weight" min="1" max="500">
-        </div>
-        <div>
-          <label for="upper-leg-rest">Rest</label>
-          <input type="text" name="upper-leg-rest" id="upper-leg-rest"  maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <label for="upper-leg-duration">Duration</label>
-          <input type="text" name="upper-leg-duration" id="upper-leg-duration" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <button class="upper-leg-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
-        </div>
-      </div>
-
-      <div class="back">
-        <h3>Back</h3>
-        <div>
-          <select name="back-select" id="back-select"></select>
-        </div>
-        <div>
-          <label for="back-sets">Sets</label>
-          <input type="number" name="back-sets" id="back-sets" min="1" max="20">
-        </div>
-        <div>
-          <label for="back-sets">Reps</label>
-          <input type="number" name="back-reps" id="back-reps" min="1" max="100">
-        </div>
-        <div>
-          <label for="back-weight">Weight(lbs)</label>
-          <input type="number" name="back-weight" id="back-weight" min="1" max="500">
-        </div>
-        <div>
-          <label for="back-rest">Rest</label>
-          <input type="text" name="back-rest" id="back-rest"  maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <label for="back-duration">Duration</label>
-          <input type="text" name="back-duration" id="back-duration" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <button class="back-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
-        </div>
-      </div>
-
-      <div class="chest">
-        <h3>Chest</h3>
-        <div>
-          <select name="chest-select" id="chest-select"></select>
-        </div>
-        <div>
-          <label for="chest-sets">Sets</label>
-          <input type="number" name="chest-sets" id="chest-sets" min="1" max="20">
-        </div>
-        <div>
-          <label for="chest-sets">Reps</label>
-          <input type="number" name="chest-reps" id="chest-reps" min="1" max="100">
-        </div>
-        <div>
-          <label for="chest-weight">Weight(lbs)</label>
-          <input type="number" name="chest-weight" id="chest-weight" min="1" max="500">
-        </div>
-        <div>
-          <label for="chest-rest">Rest</label>
-          <input type="text" name="chest-rest" id="chest-rest"  maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <label for="chest-duration">Duration</label>
-          <input type="text" name="chest-duration" id="chest-duration" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <button class="chest-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+        <div class="back">
+          <h3>Back</h3>
+          <div>
+            <select name="back-select" id="back-select"></select>
+          </div>
+          <div>
+            <label for="back-sets">Sets</label>
+            <input type="number" name="back-sets" id="back-sets" min="1" max="20">
+          </div>
+          <div>
+            <label for="back-sets">Reps</label>
+            <input type="number" name="back-reps" id="back-reps" min="1" max="100">
+          </div>
+          <div>
+            <label for="back-weight">Weight(lbs)</label>
+            <input type="number" name="back-weight" id="back-weight" min="1" max="500">
+          </div>
+          <div>
+            <label for="back-rest">Rest</label>
+            <input type="text" name="back-rest" id="back-rest"  maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <label for="back-duration">Duration</label>
+            <input type="text" name="back-duration" id="back-duration" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <button class="btn-add-exercise" id="back-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          </div>
         </div>
       </div>
+      <div class="program-design-col-2">
+        <div class="chest">
+          <h3>Chest</h3>
+          <div>
+            <select name="chest-select" id="chest-select"></select>
+          </div>
+          <div>
+            <label for="chest-sets">Sets</label>
+            <input type="number" name="chest-sets" id="chest-sets" min="1" max="20">
+          </div>
+          <div>
+            <label for="chest-sets">Reps</label>
+            <input type="number" name="chest-reps" id="chest-reps" min="1" max="100">
+          </div>
+          <div>
+            <label for="chest-weight">Weight(lbs)</label>
+            <input type="number" name="chest-weight" id="chest-weight" min="1" max="500">
+          </div>
+          <div>
+            <label for="chest-rest">Rest</label>
+            <input type="text" name="chest-rest" id="chest-rest"  maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <label for="chest-duration">Duration</label>
+            <input type="text" name="chest-duration" id="chest-duration" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <button class="btn-add-exercise" id="chest-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          </div>
+        </div>
 
-      <div class="add-custom-exercise">
-        <h3>Add Custom Exercise</h3>
-        <div>
-          <input type="text" name="custom-exercise" id="custom-exercise" placeholder="Enter Exercise">
-        </div>
-        <div>
-          <label for="custom-exercise-sets">Sets</label>
-          <input type="number" name="custom-exercise-sets" id="custom-exercise-sets" min="1" max="20">
-        </div>
-        <div>
-          <label for="custom-exercise-reps">Reps</label>
-          <input type="number" name="custom-exercise-reps" id="custom-exercise-reps" min="1" max="100">
-        </div>
-        <div>
-          <label for="custom-exercise-weight">Weight(lbs)</label>
-          <input type="number" name="custom-exercise-weight" id="custom-exercise-weight" min="1" max="500">
-        </div>
-        <div>
-          <label for="custom-exercise-rest">Rest</label>
-          <input type="text" name="custom-exercise-rest" id="custom-exercise-rest" min="1" max="10" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <label for="custom-exercise-duration">Duration</label>
-          <input type="text" name="custom-exercise-duration" id="custom-exercise-duration" maxlength="4" placeholder="min : sec">
-        </div>
-        <div>
-          <button class="custom-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+        <div class="add-custom-exercise">
+          <h3>Add Custom Exercise</h3>
+          <div>
+            <input type="text" name="custom-exercise" id="custom-exercise" placeholder="Enter Exercise">
+          </div>
+          <div>
+            <label for="custom-exercise-sets">Sets</label>
+            <input type="number" name="custom-exercise-sets" id="custom-exercise-sets" min="1" max="20">
+          </div>
+          <div>
+            <label for="custom-exercise-reps">Reps</label>
+            <input type="number" name="custom-exercise-reps" id="custom-exercise-reps" min="1" max="100">
+          </div>
+          <div>
+            <label for="custom-exercise-weight">Weight(lbs)</label>
+            <input type="number" name="custom-exercise-weight" id="custom-exercise-weight" min="1" max="500">
+          </div>
+          <div>
+            <label for="custom-exercise-rest">Rest</label>
+            <input type="text" name="custom-exercise-rest" id="custom-exercise-rest" min="1" max="10" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <label for="custom-exercise-duration">Duration</label>
+            <input type="text" name="custom-exercise-duration" id="custom-exercise-duration" maxlength="4" placeholder="min : sec">
+          </div>
+          <div>
+            <button class="btn-add-exercise" id="custom-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+          </div>
+          <div class="error-message"></div>
         </div>
       </div>
-    </div>
 
-    <div class="review-workout">
-      <h1 class="review-workout-header">Review Workout</h1>
-        <div class="exercise-review-table">
-          <form>
-            <div class="workout-date">
-              <label for="date"><small>Select Date</small></label>
-                <input type="date" name="date" id="date-picker" min="2021-12-31" max="2030-12-31" required />
-            </div>
+      <div class="program-design-col-3">
+        <div class="review-workout-container">
+          <div class="review-workout">
+            <div class="workout-form-header">Review Workout</div>
+            <img class="dumbbell-logo" src="/static/assets/dumbbell.png" alt="dumbbell logo">
+          </div>
+          <form class="workout-form-container">
             <table>
               <thead>
                 <td>Exercise</td>
@@ -218,14 +224,23 @@
               </thead>
               <tbody class="exercises-list"></tbody>
             </table>
-                <button class="btn-save" formmethod="POST">
-                  <i class="fa-regular fa-square-check"></i> Save Workout
-                </button>
+          <div class="save-workout-container">
+            <div>
+              <label for="date"><small>Select Date</small></label>
+                <input type="date" name="date" id="date-picker" min="2021-12-31" max="2030-12-31" required />
+            </div>
+            <div>
+              <button class="btn-save-workout" formmethod="POST">
+                <i class="fa-regular fa-square-check"></i> Save Workout
+              </button>
+            </div>
+          </div>
           </form>
           <button class="btn-close-workout-form">
             <i class="fa-regular fa-rectangle-xmark"></i>
           </button>
         </div>
+      </div>
     </div>
   </div>
 <script src="/static/generateWorkoutForm.js"></script>

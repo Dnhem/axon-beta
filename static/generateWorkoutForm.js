@@ -1,5 +1,5 @@
 const exercisesList = document.querySelector(".exercises-list");
-const errorMsg = document.querySelector(".error-messages");
+const errorMsg = document.querySelector(".error-message");
 
 // Lower leg input section
 const btnLowerLegExercise = document.querySelector("#lower-leg-exercise");
@@ -11,7 +11,7 @@ const lowerLegRest = document.querySelector("#lower-leg-rest");
 const lowerLegDuration = document.querySelector("#lower-leg-duration");
 
 // Upper leg input section
-const btnUpperLegExercise = document.querySelector(".upper-leg-exercise");
+const btnUpperLegExercise = document.querySelector("#upper-leg-exercise");
 const upperLegExercise = document.querySelector("#upper-leg-select");
 const upperLegSets = document.querySelector("#upper-leg-sets");
 const upperLegReps = document.querySelector("#upper-leg-reps");
@@ -20,7 +20,7 @@ const upperLegRest = document.querySelector("#upper-leg-rest");
 const upperLegDuration = document.querySelector("#upper-leg-duration");
 
 // Back input section
-const btnBackExercise = document.querySelector(".back-exercise");
+const btnBackExercise = document.querySelector("#back-exercise");
 const backExercise = document.querySelector("#back-select");
 const backSets = document.querySelector("#back-sets");
 const backReps = document.querySelector("#back-reps");
@@ -29,7 +29,7 @@ const backRest = document.querySelector("#back-rest");
 const backDuration = document.querySelector("#back-duration");
 
 // Chest input section
-const btnChestExercise = document.querySelector(".chest-exercise");
+const btnChestExercise = document.querySelector("#chest-exercise");
 const chestExercise = document.querySelector("#chest-select");
 const chestSets = document.querySelector("#chest-sets");
 const chestReps = document.querySelector("#chest-reps");
@@ -38,7 +38,7 @@ const chestRest = document.querySelector("#chest-rest");
 const chestDuration = document.querySelector("#chest-duration");
 
 // Custom exercise input section
-const btnCustomExercise = document.querySelector(".custom-exercise");
+const btnCustomExercise = document.querySelector("#custom-exercise");
 const customExercise = document.querySelector("#custom-exercise");
 const customExerciseSets = document.querySelector("#custom-exercise-sets");
 const customExerciseReps = document.querySelector("#custom-exercise-reps");
@@ -52,6 +52,7 @@ const customExerciseDuration = document.querySelector(
 const generateDeleteBtn = () => {
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "X";
+  deleteBtn.classList.add("remove-exercise");
   deleteBtn.addEventListener("click", e => {
     e.preventDefault();
     while (e.target.parentNode.firstChild) {
@@ -111,15 +112,13 @@ const createTableRow = (
 // Validate form inputs
 // call helper function createTableRow to insert exercise,sets,reps to into table
 const addExerciseToTable = (exercise, sets, reps, weight, rest, duration) => {
-  let errorMessages = [];
-  if (exercise.value !== "Select Exercise" || exercise.value !== "") {
-    createTableRow(exercise, sets, reps, weight, rest, duration);
-    errorMsg.innerText = "";
+  if (exercise.value === "Select Exercise" || exercise.value === "") {
+    errorMsg.innerText = "Please SELECT an exercise";
+    errorMsg.classList.add("error-msg");
+    return;
   }
-  if (exercise.value === "Select Exercise") {
-    errorMessages.push("Please SELECT an exercise");
-  }
-  if (errorMessages.length > 0) errorMsg.innerText = errorMessages.join("/");
+  createTableRow(exercise, sets, reps, weight, rest, duration);
+  errorMsg.innerText = "";
 };
 
 // Click event for lower leg exercises
@@ -173,7 +172,6 @@ btnChestExercise.addEventListener("click", e => {
     chestDuration
   );
   // reset input fields
-  chestExercise.value = "";
   chestSets.value = "";
   chestReps.value = "";
   chestWeight.value = "";

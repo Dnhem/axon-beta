@@ -4,10 +4,32 @@
 
 {% block content %}
 
-<h1>{{ date }}</h1>
-
-{% for exercise in exercises %}
-<p>{{ exercise.name }}</p>
-{% endfor %}
-<a href="/client/{{ client.id }}">Back</a>
+<a href="/client/{{ client.id }}" class="back-to-client">&#8592 Back to client</a>
+<div class="workout-table-container">
+  <h1 class="workout-date">{{ date }}</h1>
+  <table class="workout-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Weight (lbs)</th>
+        <th>Duration</th>
+        <th>Rest</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for exercise in exercises %}
+      <tr>
+        <td>{{ exercise.name }}</td>
+        <td>{{ exercise. sets }}</td>
+        <td>{{ exercise.reps }}</td>
+        <td>{{ exercise.weight }}</td>
+        <td>{{ exercise.duration }}</td>
+        <td>{{ exercise.rest }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}

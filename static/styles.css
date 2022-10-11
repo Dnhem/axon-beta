@@ -23,7 +23,8 @@ body {
   position: relative;
 }
 
-.axon-header {
+.axon-header,
+.client-header {
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: .1em;
@@ -31,12 +32,7 @@ body {
   margin-top: 0;
 }
 
-.client-header {
-  font-size: 1.5em;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
+/* Trainer Profile Section */
 
 .trainer-name {
   text-transform: uppercase;
@@ -89,6 +85,7 @@ body {
 .trainer-quote {
   font-size: 1em;
   font-style: italic;
+  font-weight: bold;
   margin-top: 2em;
   color: purple;
 }
@@ -98,16 +95,6 @@ body {
   transform: translateX(-50%);
   bottom: 1em;
   color: rgba(23, 20, 20, 0.9);
-}
-
-.home-link {
-  font-size: 1.2em;
-  text-decoration-line: none;
-  color: rgba(23, 20, 20, 0.9);
-}
-
-.home-link:hover {
-  color: #fff;
 }
 
 /* Client section */
@@ -131,7 +118,8 @@ body {
   height: 2em;
 }
 
-.client:hover,
+#add-workout-btn:hover,
+.add-client:hover,
 .client-tab:hover {
   cursor: pointer;
   filter: brightness(150%);
@@ -203,7 +191,8 @@ body {
   justify-content: space-around;
 }
 
-.back-home {
+.back-home,
+.back-to-client {
   display: inline-block;
   font-size: 12px;
   border: 1px solid white;
@@ -212,9 +201,11 @@ body {
   margin-top: 12px;
   background-color: rgb(54, 130, 64);
   color: white;
+  text-decoration: none;
 }
 
-.back-home:hover {
+.back-home:hover,
+.back-to-client:hover {
   color: rgb(54, 130, 64);
   background-color: white;
 }
@@ -340,6 +331,58 @@ body {
 }
 
 /* Client Page Design */
+.btn-remove-client {
+  text-decoration: none;
+  padding: .2em .5em;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+}
+
+.btn-update-client {
+  margin-right: .8em;
+  padding: .2em .5em;
+  background-color: rgb(55, 184, 72);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+}
+
+.btn-edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  padding: .2em .5em;
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 2em;
+  cursor: pointer;
+}
+
+.btn-edit-client {
+  background-color: rgba(52, 22, 80, .5);
+}
+
+.btn-remove-client:hover,
+.btn-edit-client:hover,
+.btn-update-client:hover {
+  filter: brightness(150%);
+}
+
+.btn-edit span {
+  margin-left: .3em;
+}
+
 .client-page-container {
   position: relative;
 }
@@ -360,45 +403,18 @@ body {
   margin-top: -3em;
 }
 
-.btn-edit-client {
-  /* margin-right: .8em; */
-  padding: .2em .5em;
-  background-color: rgba(52, 22, 80, .5);
-  color: #1a0322;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: .5em;
-  border: none;
-  height: 2em;
-  cursor: pointer;
-}
-
-.btn-remove-client {
-  /* margin-left: .8em; */
-  padding: .2em .5em;
-  background-color: rgba(255, 0, 0, 0.5);
-  color: #1a0322;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: .5em;
-  border: none;
-  height: 2em;
-  cursor: pointer;
-}
-
-.btn-remove-client:hover,
-.btn-edit-client:hover {
-  filter: brightness(150%);
-}
+/* Program workout form*/
 
 .workout-form {
-  background-color: rgba(224, 215, 215, .95);
-  border-radius: 1em;
-  max-width: 100%;
-  min-width: 60em;
   display: none;
-  position: absolute;
-  padding: .7em;
-  top: 5%;
-  left: 30%;
+}
+
+.workout-table-container {
+  min-width: 800px;
+}
+
+.workout-date {
+  text-align: center;
 }
 
 .acute-variables {
@@ -409,9 +425,33 @@ body {
   position: relative;
 }
 
+.error-msg {
+  margin-top: 5em;
+  color: rgb(197, 56, 56);
+}
+
+.btn-add-exercise {
+  padding: .2em .5em;
+  background-color: rgb(55, 184, 72);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  height: 1.8em;
+  cursor: pointer;
+}
+
+.btn-add-exercise {
+  font-size: 1em;
+}
+
+.btn-add-exercise:hover {
+  filter: brightness(120%);
+}
+
 .btn-close-workout-form {
   padding: .2em .5em;
-  background-color: rgba(255, 0, 0, 0.4);
+  background-color: rgba(255, 0, 0, 0.7);
   color: #1a0322;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: .5em;
@@ -419,39 +459,178 @@ body {
   height: 2em;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: .5em;
+  right: .5em;
 }
 
-.show-form {
-  display: flex;
-  animation: fadein .8s;
+.btn-close-workout-form:hover {
+  filter: brightness(120%);
+  color: #fff;
 }
 
-#add-workout-btn:hover {
+.remove-exercise {
+  font-size: .8em;
+  padding: .2em .6em;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
   cursor: pointer;
 }
 
-.program-design {
-  flex-basis: 50%;
+.remove-exercise:hover {
+  filter: brightness(150%);
+  color: #fff;
 }
 
-.review-workout {
-  flex-basis: 50%;
+.show-form {
+  display: block;
+  animation: fadein .8s;
+}
+
+.program-design {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(224, 215, 215, .95);
+  border-radius: 1em;
+  min-width: 75em;
+  position: absolute;
+  padding: .7em;
+  top: 1%;
+  left: 10%;
+}
+
+.program-design-col-1 {
+  flex: 1;
+  border-right: 1px solid rgb(67, 59, 59);
+  padding-right: 2em;
+}
+
+.program-design-col-2 {
+  flex: 1;
+  padding-left: 2em;
+}
+
+.program-design-col-3 {
+  flex: 2;
+  position: relative;
+}
+
+.save-workout-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-save-workout {
+  margin-right: .8em;
+  padding: 12px 24px;
+  background-color: rgb(55, 184, 72);
+  color: #1a0322;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: .5em;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-save-workout:hover {
+  filter: brightness(120%);
 }
 
 #date-picker {
-  width: 15em;
-  height: 3em;
+  padding: 12px 24px;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    45deg,
-    rgba(13, 242, 43, 0.6),
-    rgba(13, 242, 43, 0.2)
-  );
-  border: 0;
-  border-radius: 1em;
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: .5em;
+  width: 8em;
   outline: none;
-  font-size: 1.2em;
-  padding: 0 .5em;
+  color: #fff;
   text-transform: uppercase;
+}
+
+.review-workout {
+  display: flex;
+  align-items: center;
+}
+
+.workout-form-header {
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.dumbbell-logo {
+  width: 40px;
+  margin-left: 1em;
+}
+
+/* Workout history table */
+
+.workout-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.workout-table thead tr {
+  background-color: rgba(13, 242, 43, 0.4);
+  text-align: left;
+}
+
+.workout-table th,
+.workout-table td {
+  padding: 12px 15px;
+}
+
+.workout-table td {
+  background-color: #fff;
+}
+
+.workout-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Edit client form */
+
+#client-edit-form {
+  background-color: rgba(224, 215, 215, .95);
+  color: #1a0322;
+  margin: 10% auto;
+  background-color: white;
+  width: 500px;
+  padding: 50px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#client-edit-form h1 {
+  margin-top: 0;
+}
+
+.edit-form-label {
+  display: inline-block;
+  width: 100px;
+}
+
+.edit-form-input {
+  width: 300px;
+}
+
+.edit-client-btn-container {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
