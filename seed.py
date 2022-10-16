@@ -1,5 +1,5 @@
 from models import Client,Exercise, db
-from axon import app
+from app import app
 
 # Create all tables
 db.drop_all()
