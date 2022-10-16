@@ -32,9 +32,43 @@ async function getExercises(bodyPart, dropDown) {
   // Mock data, API monthly quota exceeded
   let results = {
     "lower legs": [ { name: "calf raises" }, { name: "peroneal stretch" } ],
-    "upper legs": [ { name: "squats" }, { name: "lunge" } ],
-    back: [ { name: "lat pull-down" }, { name: "dumbbell row" } ],
-    chest: [ { name: "bench press" }, { name: "dumbbell flies" } ],
+    "upper legs": [
+      { name: "barbell squat" },
+      { name: "lunge" },
+      { name: "rear elevated foot squat" },
+      { name: "walking lunges" },
+      { name: "reverse lunge" },
+      { name: "barbell hip thruster" },
+      { name: "glute bridge" },
+      { name: "leg extension" },
+      { name: "step up" },
+      { name: "plyo squat" },
+      { name: "box jump" },
+    ],
+    back: [
+      { name: "lat pull-down" },
+      { name: "dumbbell row" },
+      { name: "seated cable row" },
+      { name: "barbell row" },
+      { name: "landmine row" },
+      { name: "inverted row" },
+      { name: "pull-up" },
+      { name: "deadlift" },
+      { name: "rack pull" },
+      { name: "kettle bell row" },
+    ],
+    chest: [
+      { name: "dumbbell bench press" },
+      { name: "dumbbell flies" },
+      { name: "dumbell incline bench press" },
+      { name: "cable fly" },
+      { name: "push up" },
+      { name: "incline push up" },
+      { name: "close grip bench press" },
+      { name: "neutral grip dumbbell press" },
+      { name: "incline barbell bench press" },
+      { name: "decline push up" },
+    ],
   };
   populateDropDown(results[bodyPart], dropDown);
 }
