@@ -6,7 +6,7 @@ import requests
 from api_key import API_SECRET_KEY
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///axon'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:oDwXVgDi6QWpHtufLusf@containers-us-west-104.railway.app:5589/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
