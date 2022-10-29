@@ -463,8 +463,8 @@ body {
   height: 2em;
   cursor: pointer;
   position: absolute;
-  top: .5em;
-  right: .5em;
+  top: 0;
+  right: 0;
 }
 
 .btn-close-workout-form:hover {
@@ -498,11 +498,11 @@ body {
   justify-content: space-between;
   background-color: rgba(224, 215, 215, .95);
   border-radius: 1em;
-  min-width: 75em;
+  /* min-width: 75em; */
   position: absolute;
   padding: .7em;
   top: 1%;
-  left: 10%;
+  left: 3%;
 }
 
 .program-design-col-1 {
@@ -522,12 +522,13 @@ body {
 }
 
 .save-workout-container {
-  width: 100%;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   bottom: 0;
+  right: 50px;
 }
 
 .btn-save-workout {
