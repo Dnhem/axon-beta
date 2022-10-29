@@ -417,6 +417,10 @@ body {
   text-align: center;
 }
 
+.variables {
+  text-align: center;
+}
+
 .acute-variables {
   width: 3em;
 }
@@ -635,25 +639,15 @@ body {
   right: 0;
 }
 
-/* Feature for ease of click on date picker */
-.form-control input {
-  border: none;
-  box-sizing: border-box;
-  outline: 0;
-  padding: .75rem;
-  position: relative;
-  width: 100%;
-}
-
 input[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
   bottom: 0;
   color: transparent;
   cursor: pointer;
-  height: auto;
-  left: 0;
+  height: 60px;
+  left: 60px;
   position: absolute;
   right: 0;
   top: 0;
-  width: auto;
+  width: 200px;
 }

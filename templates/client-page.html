@@ -199,7 +199,7 @@
             <input type="text" name="custom-exercise-duration" id="custom-exercise-duration" maxlength="4" placeholder="min : sec">
           </div>
           <div>
-            <button class="btn-add-exercise" id="custom-exercise"><i class="fa-regular fa-square-plus"></i> add</button>
+            <button class="btn-add-exercise" id="custom-exercise-btn"><i class="fa-regular fa-square-plus"></i> add</button>
           </div>
           <div class="error-message"></div>
         </div>
@@ -227,7 +227,7 @@
           <div class="save-workout-container">
             <div>
               <label for="date"><small>Select Date</small></label>
-                <input type="date" name="date" id="date-picker" min="2021-12-31" max="2030-12-31" required />
+                <input type="date" name="date" class="form-control" id="date-picker" min="2021-12-31" max="2030-12-31" required />
             </div>
             <div>
               <button class="btn-save-workout" formmethod="POST">

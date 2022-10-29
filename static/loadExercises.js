@@ -15,21 +15,10 @@ function populateDropDown(bodyPart, dropDown) {
 }
 
 // Two Part Function:
-// 1) API Call to retrieve all exercises for each individual body part
+// 1) Remote API Call to retrieve all exercises for each individual body part
 // 2) calls populateDropDown function
 async function getExercises(bodyPart, dropDown) {
-  // TODO: Uncomment to make remote API call
-  // try {
-  //   const exercises = await axios({
-  //     url: `http://localhost:5000/exercises/bodyPart/${bodyPart}`,
-  //     method: "GET",
-  //   });
-  //   populateDropDown(exercises.data, dropDown);
-  // } catch (err) {
-  //   console.log(err);
-  // }
-
-  // Mock data, API monthly quota exceeded
+  // Mock data when API call exceeds monthly quota
   let results = {
     "lower legs": [ { name: "calf raises" }, { name: "peroneal stretch" } ],
     "upper legs": [
@@ -70,7 +59,19 @@ async function getExercises(bodyPart, dropDown) {
       { name: "decline push up" },
     ],
   };
-  populateDropDown(results[bodyPart], dropDown);
+  try {
+    const exercises = await axios({
+      url: `http://localhost:5000/exercises/bodyPart/${bodyPart}`,
+      method: "GET",
+    });
+    if (exercises.data.data) {
+      populateDropDown(exercises.data.data, dropDown);
+    } else {
+      populateDropDown(results, dropDown);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 // Generate dropdown menu for each body part on page load

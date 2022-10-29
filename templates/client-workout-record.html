@@ -22,11 +22,11 @@
       {% for exercise in exercises %}
       <tr>
         <td>{{ exercise.name }}</td>
-        <td>{{ exercise. sets }}</td>
-        <td>{{ exercise.reps }}</td>
-        <td>{{ exercise.weight }}</td>
-        <td>{{ exercise.duration }}</td>
-        <td>{{ exercise.rest }}</td>
+        <td class="variables">{{ exercise. sets }}</td>
+        <td class="variables">{{ exercise.reps }}</td>
+        <td class="variables">{{ exercise.weight }}</td>
+        <td class="variables">{{ exercise.duration }}</td>
+        <td class="variables">{{ exercise.rest }}</td>
       </tr>
       {% endfor %}
     </tbody>

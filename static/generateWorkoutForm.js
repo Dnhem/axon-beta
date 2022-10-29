@@ -38,7 +38,7 @@ const chestRest = document.querySelector("#chest-rest");
 const chestDuration = document.querySelector("#chest-duration");
 
 // Custom exercise input section
-const btnCustomExercise = document.querySelector("#custom-exercise");
+const btnCustomExercise = document.querySelector("#custom-exercise-btn");
 const customExercise = document.querySelector("#custom-exercise");
 const customExerciseSets = document.querySelector("#custom-exercise-sets");
 const customExerciseReps = document.querySelector("#custom-exercise-reps");
@@ -73,7 +73,7 @@ const labelInputs = inputs => {
     inputs[4].setAttribute("name", "rest-" + rowCounter);
     inputs[5].setAttribute("name", "duration-" + rowCounter);
   }
-  // add common class name for second to last inputs for design
+  // add common class name for second to last inputs for design purposes
   for (let i = 1; i < inputs.length; i++) {
     inputs[i].classList.add("acute-variables");
   }
@@ -159,7 +159,6 @@ btnBackExercise.addEventListener("click", e => {
     backDuration
   );
 });
-
 // Click event for chest exercises
 btnChestExercise.addEventListener("click", e => {
   e.preventDefault();
@@ -190,6 +189,7 @@ btnCustomExercise.addEventListener("click", e => {
     customExerciseRest,
     customExerciseDuration
   );
+  console.log(customExercise);
   // reset input fields
   customExercise.value = "";
   customExerciseSets.value = "";
