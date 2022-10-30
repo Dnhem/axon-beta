@@ -26,7 +26,7 @@ def list_exercise(bodypart):
     response = requests.get(
         f"https://exercisedb.p.rapidapi.com/exercises/bodyPart/{bodypart}",
         headers={
-            "X-RapidAPI-Key": API_SECRET_KEY,
+            "X-RapidAPI-Key": os.environ.get("API_SECRET_KEY"),
             "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
         },
     )
