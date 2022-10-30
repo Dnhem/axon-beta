@@ -3,7 +3,6 @@ import requests
 from client_form import ClientForm
 from models import db, connect_db, Client, Exercise
 from flask_debugtoolbar import DebugToolbarExtension
-from api_key import API_SECRET_KEY
 import os
 
 app = Flask(__name__)
