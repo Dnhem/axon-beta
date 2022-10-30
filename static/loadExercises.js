@@ -61,7 +61,7 @@ async function getExercises(bodyPart, dropDown) {
   };
   try {
     const exercises = await axios({
-      url: `http://localhost:5000/exercises/bodyPart/${bodyPart}`,
+      url: `/exercises/bodyPart/${bodyPart}`,
       method: "GET",
     });
     if (exercises.data.data) {
