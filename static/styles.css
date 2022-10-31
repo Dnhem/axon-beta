@@ -519,6 +519,7 @@ body {
 .program-design-col-3 {
   flex: 2;
   position: relative;
+  margin-left: 100px;
 }
 
 .save-workout-container {
@@ -651,4 +652,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   right: 0;
   top: 0;
   width: 200px;
+}
+
+/* Final touch-ups */
+div select {
+  width: 240px;
+}
+
+.rest,
+.duration {
+  width: 56px;
 }
