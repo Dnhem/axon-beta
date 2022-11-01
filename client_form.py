@@ -8,7 +8,6 @@ class ClientForm(FlaskForm):
 
     first_name = StringField("First Name", validators=[InputRequired()])
     last_name = StringField("Last Name", validators=[InputRequired()])
-    start_date = DateField("Start Date", validators=[Optional()])
     goals = StringField("Goals", validators=[Optional()])
     email = StringField("Email", validators=[Optional()])
     phone = StringField("Phone", validators=[Optional()])

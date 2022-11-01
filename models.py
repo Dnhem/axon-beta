@@ -19,7 +19,6 @@ class Client(db.Model):
     first_name = db.Column(db.String(25), nullable=False)
     last_name = db.Column(db.String(25), nullable=False)
     image = db.Column(db.String, default=DEFAULT_IMG)
-    start_date = db.Column(db.String)
     goals = db.Column(db.String)
     phone = db.Column(db.String)
     email = db.Column(db.String(50), unique=True)

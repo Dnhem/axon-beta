@@ -3,6 +3,7 @@ import requests
 from client_form import ClientForm
 from models import db, connect_db, Client, Exercise
 from flask_debugtoolbar import DebugToolbarExtension
+from datetime import datetime
 import os
 
 app = Flask(__name__)
@@ -43,26 +44,25 @@ def display_home():
 @app.route("/", methods=["POST"])
 def add_client():
     """Add new client to database"""
-    try: 
-        first_name = request.form["firstname"]
-        last_name = request.form["lastname"]
-        start_date = request.form["date"]
-        goals = request.form["goals"]
-        phone = request.form["phone"]
-        email = request.form["email"]
-        new_client = Client(
-            first_name=first_name,
-            last_name=last_name,
-            start_date=start_date,
-            goals=goals,
-            phone=phone,
-            email=email,
-        )
-        db.session.add(new_client)
-        db.session.commit()
-        return redirect("/")
-    except:
-        return jsonify({'msg': 'Missing required input fields.'}), 500
+    # try: 
+    first_name = request.form["firstname"]
+    last_name = request.form["lastname"]
+    goals = request.form["goals"]
+    phone = request.form["phone"]
+    email = request.form["email"]
+    new_client = Client(
+        first_name=first_name,
+        last_name=last_name,
+        goals=goals,
+        phone=phone,
+        email=email,
+    )
+    db.session.add(new_client)
+    db.session.commit()
+    # except:
+        # TODO:FLASH MSG
+        # pass
+    return redirect("/")
 
 @app.route("/client/<int:client_id>", methods=["GET"])
 def show_client_page(client_id):
@@ -100,7 +100,6 @@ def save_workout(client_id):
             client_id=client_id,
             date=inputData["date"],
         )
-        print(exercises.__dict__)
         db.session.add(exercises)
         db.session.commit()
     return redirect(f"/client/{client_id}")
