@@ -16,7 +16,6 @@ john = Client(
     phone="415-999-9999",
     email="johnsmith@pretendmail.com",
     image="../static/assets/john-modified.png",
-    start_date="2020-08-15",
     goals="Muscle gain",
 )
 
@@ -26,7 +25,6 @@ ada = Client(
     phone="415-777-7777",
     email="adalovelace@pretendmail.com",
     image="../static/assets/ada-modified.png",
-    start_date="2018-12-08",
     goals="Muscle tone",
 )
 
@@ -36,7 +34,6 @@ marco = Client(
     phone="650-555-5555",
     email="marcopolo@pretendmail.com",
     image="../static/assets/marco-modified.png",
-    start_date="2022-09-2",
     goals="Weight loss",
 )
 

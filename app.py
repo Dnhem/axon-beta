@@ -125,7 +125,6 @@ def update_client(client_id):
     if client_form.validate_on_submit():
         client.first_name = client_form.first_name.data
         client.last_name = client_form.last_name.data
-        client.start_date = client_form.start_date.data
         client.goals = client_form.goals.data
         client.email = client_form.email.data
         client.phone = client_form.phone.data

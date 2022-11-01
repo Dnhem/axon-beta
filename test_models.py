@@ -24,7 +24,6 @@ class ClientModelTestCase(TestCase):
             phone="5555555555",
             email="danielburns@pretendmail.com",
             goals="weight loss",
-            start_date="10/31/2022",
         )
 
         db.session.add(client)
