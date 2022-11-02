@@ -36,8 +36,47 @@ for proper progressive overload and point of reference.
 * <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="flask"/>
 * <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="postgresql"/>
 
+<!-- GETTING STARTED -->
+## Getting Started
 
-<!-- CONTACT -->
+### Installation
+
+1. Get a free API Key at [https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/)
+
+2. Clone the repo
+   ```sh
+   git clone https://github.com/Dnhem/axon-beta.git
+   ```
+
+
+* Create virtual environment
+   ```sh
+   python3 -m venv venv
+   ```
+* Enter virtual environment
+   ```sh
+   source venv/bin/activate
+   ```
+* Install dependencies
+   ```sh
+   pip install -r requirements.txt
+   ```
+* Start the app
+   ```sh
+   FLASK_ENV=development flask run
+   ```
+
+### Test files
+
+* Test app routes
+   ```sh
+   python -m unittest tests_app.py
+   ```
+* Test app models
+   ```sh
+   python -m unittest test_models.py
+   ```
+   
 ## Contact
 
 Dana Nhem
