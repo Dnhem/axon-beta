@@ -11,7 +11,7 @@
   <p align="center">
     Exercise Programming for Fitness Professionals.
     <br />
-    <a href="https://axon-beta-production.up.railway.app"><strong>Live Demo</strong></a>
+    <a href="https://axon-beta.herokuapp.com/"><strong>Live Demo</strong></a>
 </div>
 
 
